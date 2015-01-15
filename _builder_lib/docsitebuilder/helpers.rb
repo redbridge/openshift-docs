@@ -14,7 +14,7 @@ module DocSiteBuilder
     PREVIEW_DIRNAME     = '_preview'
     PACKAGE_DIRNAME     = '_package'
     BLANK_STRING_RE     = Regexp.new('^\s*$')
-    PRODUCT_AUTHOR      = "OpenShift Documentation Project <dev@lists.openshift.redhat.com>"
+    PRODUCT_AUTHOR      = "RedBridge Apps <operations@redbridge.se> and OpenShift Documentation Project <dev@lists.openshift.redhat.com>"
     ANALYTICS_SHIM      = '<script type="text/javascript" src="https://assets.openshift.net/app/assets/site/tracking.js"></script>'
 
     def source_dir

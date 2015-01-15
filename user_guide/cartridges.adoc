@@ -15,7 +15,7 @@ When a new application is created, a URL with name of the application and the na
 
 With each new application that is created with the client tools, a remote Git repository is populated with the selected cartridge, which is then cloned to the current directory on the local machine. The host name and IP address of the application are also added to the list of known hosts in the [filename]#~/.ssh/known_hosts# directory. 
 
-The following table describes each component that makes up an OpenShift application. 
+The following table describes each component that makes up an RedBridge Apps application. 
 
 .Application Components
 [cols="2,8",options="header"]
@@ -23,23 +23,23 @@ The following table describes each component that makes up an OpenShift applicat
 |Component|Description
 						
 |Domain
-|The domain provides a unique group identifier for all the applications of a specific user. The domain is not directly related to DNS; instead, it is appended to the application name to form a final application URL of the form http://_app_name-domain.example.com_
+|The domain provides a unique group identifier for all the applications of a specific user. The domain is not directly related to DNS; instead, it is appended to the application name to form a final application URL of the form http://_app_name-domain.apps.rbcloud.net_
 
 |Application Name
-|The name of the application is selected by a user. The final URL to access the application is of the form http://_app_name-domain.example.com_.
+|The name of the application is selected by a user. The final URL to access the application is of the form http://_app_name-domain.apps.rbcloud.net_.
 
 |Alias
-|DNS names can be provided for the application by registering an alias with OpenShift and pointing the DNS entry to the OpenShift servers.
+|DNS names can be provided for the application by registering an alias with RedBridge Apps and pointing the DNS entry to the platform servers.
 						
 |Git repository
 |A Git repository is used to modify application code locally. After the code is applied, the `git push` command is required to deploy the revised code.
 |===
 
-OpenShift provides dedicated [filename]#/var/tmp# and [filename]#/tmp# directories for each user application. The [filename]#/var/tmp# directory is a symbolic link to [filename]#/tmp#. Each [filename]#/tmp# directory is completely isolated from the [filename]#/tmp# directories of all other applications. Files that are untouched for any period of ten days are automatically deleted from these directories. 
+The platform provides dedicated [filename]#/var/tmp# and [filename]#/tmp# directories for each user application. The [filename]#/var/tmp# directory is a symbolic link to [filename]#/tmp#. Each [filename]#/tmp# directory is completely isolated from the [filename]#/tmp# directories of all other applications. Files that are untouched for any period of ten days are automatically deleted from these directories. 
 
 == Application Life Cycle
 
-The following table describes the general life cycle of most OpenShift applications.  
+The following table describes the general life cycle of most RedBridge Apps applications.  
 [cols="2,8",options="header"]
 |===
 |Process|Description
@@ -48,13 +48,13 @@ The following table describes the general life cycle of most OpenShift applicati
 |Develop the application code with the desired language and tools. Continuously push the application code to the applications remote Git source code repository.
 								
 |Build
-|OpenShift supports various build mechanisms, whether it is a simple script, a personal Jenkins continuous integration server, or an external build system.
+|RedBridge Apps supports various build mechanisms, whether it is a simple script, a personal Jenkins continuous integration server, or an external build system.
 								
 |Deploy
-|Every application is composed of cartridges that simplify server maintenance and configuration. OpenShift supports various technologies to provision the required services automatically.
+|Every application is composed of cartridges that simplify server maintenance and configuration. RedBridge Apps supports various technologies to provision the required services automatically.
 								
 |Manage
-|OpenShift allows real-time monitoring, debugging, and tuning of applications. Applications are scaled automatically depending on web traffic.
+|RedBridge Apps allows real-time monitoring, debugging, and tuning of applications. Applications are scaled automatically depending on web traffic.
 |===
 
 == Scalable Applications

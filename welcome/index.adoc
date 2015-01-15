@@ -23,7 +23,7 @@ These topics describe how to install and configure the RedBridge Apps command li
 
 a|link:../user_guide/overview.html[*User Guide*]
 
-Describes key concepts of OpenShift with instructions on how to use the features to create and manage RedBridge Apps applications.
+Describes key concepts of platform with instructions on how to use the features to create and manage RedBridge Apps applications.
 
 a|link:../cartridge_specification_guide/overview.html[*Developing Cartridges*]
 

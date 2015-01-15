@@ -11,7 +11,7 @@
 toc::[]
 
 == Overview
-The OpenShift runtime contains a system for upgrading custom cartridges on a gear to the latest available version and for applying gear-level changes that affect cartridges.
+The RedBridge Apps OpenShift runtime contains a system for upgrading custom cartridges on a gear to the latest available version and for applying gear-level changes that affect cartridges.
 
 ifdef::openshift-online[]
 The +oo-admin-upgrade+ command provides the command line interface for the upgrade system and can upgrade all the gears in an OpenShift environment, all the gears on a node, or a single gear. This command queries the OpenShift broker to determine the locations of the gears to migrate and uses MCollective calls to trigger the upgrade for a gear.

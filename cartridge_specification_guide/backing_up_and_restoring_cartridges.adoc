@@ -11,7 +11,7 @@
 toc::[]
 
 == Overview
-OpenShift provides +snapshot+ and +restore+ features for user applications. These features enable OpenShift application developers to: 
+RedBridge Apps provides +snapshot+ and +restore+ features for user applications. These features enable RedBridge Apps and OpenShift application developers to: 
 
 
 *  Snapshot the current state of an application to create a backup. 
