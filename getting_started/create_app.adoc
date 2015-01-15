@@ -21,7 +21,7 @@ You can create a new application with either the management console or the clien
 . Enter the name for your application, select whether to make it scalable, and choose the number of gears.
 . Click btn:[Create Application].
 
-After the application is created, you can view it with the public URL in the form _<app_name>-<domain>.rhcloud.com_. 
+After the application is created, you can view it with the public URL in the form _<app_name>-<domain>.apps.rbcloud.net_. 
 
 When you create an application with the management console, the application's source code repository is not automatically copied to your workstation. Therefore, you must manually copy it so that you can modify the code and deploy the application to suit your requirements.
 
@@ -72,13 +72,13 @@ Creating application 'mypython' ... done
 Waiting for your DNS name to be available ... done
 
 Cloning into 'mypython'...
-Warning: Permanently added 'mypython-mydomain.rhcloud.com' (RSA) to the list of known hosts.
+Warning: Permanently added 'mypython-mydomain.apps.rbcloud.net' (RSA) to the list of known hosts.
 
 Your application 'mypython' is now available.
 
-  URL:        http://mypython-mydomain.rhcloud.com/
-  SSH to:     54052e482587c84787000ad7@mypython-mydomain.rhcloud.com
-  Git remote: ssh://54052e482587c84787000ad7@mypython-mydomain.rhcloud.com/~/git/mypython.git/
+  URL:        http://mypython-mydomain.apps.rbcloud.net/
+  SSH to:     54052e482587c84787000ad7@mypython-mydomain.apps.rbcloud.net
+  Git remote: ssh://54052e482587c84787000ad7@mypython-mydomain.apps.rbcloud.net/~/git/mypython.git/
   Cloned to:  /home/User/mypython
 
 Run 'rhc show-app mypython' for more details about your app.
@@ -87,4 +87,4 @@ Run 'rhc show-app mypython' for more details about your app.
 
 When you create a new application with the client tools, a copy of the application's source code repository is automatically downloaded to the directory on your workstation where you created the application.
 
-After the application is created, you can view it with the public URL in the form _<app_name>-<domain>.example.com_. For the application we created in the example the public URL is mypython-mydomain.rhcloud.com.
+After the application is created, you can view it with the public URL in the form _<app_name>-<domain>.example.com_. For the application we created in the example the public URL is mypython-mydomain.apps.rbcloud.net.

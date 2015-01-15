@@ -6,7 +6,7 @@
 
 You must complete the following preliminary steps to get started with OpenShift. 
 
-*Step 1*: https://www.openshift.com/app/account/new?then=/community/get-started[Sign up for an account]
+*Step 1*: https://portal.redbridge.se/account/signup/[Sign up for an account]
 
 *Step 2*: link:../client_tools_install_guide/overview.html[Install the client tools]
 
@@ -16,7 +16,7 @@ Note that you can start the interactive setup wizard with the `rhc setup` comman
 
 //[cols="2,7"]
 //|===
-//|Step 1 |https://www.openshift.com/app/account/new?then=/community/get-started[Sign up for an account]
+//|Step 1 |https://portal.redbridge.se/account/signup/[Sign up for an account]
 //|Step 2 |link:../client_tools_install_guide/configuring_client_tools.html[Install and configure the client tools]
 //|Step 3 |Create, deploy, and view your application
 //|===

@@ -108,14 +108,15 @@ module DocSiteBuilder
       page_css = ''
       args[:css].each do |sheet|
         sheet_href = args[:css_path] + sheet
-        page_css << "<link href=\"#{sheet_href}\" rel=\"stylesheet\" />\n"
+        page_css << "<link href=\"#{sheet_href}\" rel=\"stylesheet\" type=\"text/css\"/>\n"
       end
       page_head = <<EOF
 <!DOCTYPE html>
 <html>
 <head>
-<title>#{args[:distro]} #{args[:version]} | #{args[:group_title]} | #{args[:topic_title]}</title>
-<link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css">
+<title>RedBridge Apps / Powered by #{args[:distro]} | #{args[:group_title]} | #{args[:topic_title]}</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 #{page_css}
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -127,58 +128,10 @@ module DocSiteBuilder
 <!-- or, set /favicon.ico for IE10 win -->
 <meta content="OpenShift" name="application-name">
 <meta content="#000000" name="msapplication-TileColor">
-<meta content="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" name="msapplication-TileImage">
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="https://assets.openshift.net/content/html5shiv.js" type="text/javascript"></script>
-  <script src="https://assets.openshift.net/content/respond.js" type="text/javascript"></script>
-  <link href="https://assets.openshift.net/content/vendor/respond-js/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
-  <link href="#{args[:images_path]}respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
-  <script src="#{args[:javascripts_path]}respond.proxy.js" type="text/javascript"></script>
-<![endif]-->
 </head>
 <body>
 <div class="navbar navbar-default navbar-openshift" role="navigation">
   <div class="navbar-header">
-    <div class="dropdown">
-      <a class="dropdown-toggle navbar-menu" href="#" data-toggle="dropdown">
-        <span class="navbar-menu-title">
-          MENU
-        </span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span></a>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="https://www.openshift.com/products">Products</a>
-        </li>
-        <li>
-          <a href="https://www.openshift.com/products/pricing">Pricing</a>
-        </li>
-        <li class="active">
-          <a href="https://developers.openshift.com">Developer Portal</a>
-        </li>
-        <li>
-          <a href="https://help.openshift.com">Help Center</a>
-        </li>
-        <li>
-          <a href="https://openshift.uservoice.com">Vote on Features</a>
-        </li>
-        <li>
-          <a href="https://marketplace.openshift.com/">Add-ons</a>
-        </li>
-        <li>
-          <a href="https://blog.openshift.com/">Blog</a>
-        </li>
-        <li class="divider hidden-md hidden-lg"></li>
-        <li class="hidden-md hidden-lg">
-          <a class="nav-log-in" href="https://openshift.redhat.com/app/console">Log in</a>
-        </li>
-        <li class="hidden-md hidden-lg">
-          <a class="nav-sign-up" href="https://www.openshift.com/app/account/new">Sign up free</a>
-        </li>
-      </ul>
-    </div>
     <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" />
       <span class="sr-only">
@@ -187,20 +140,11 @@ module DocSiteBuilder
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a class="nav-search" href="#" data-toggle="collapse" data-target="#navbar-search-field"><i class="fa fa-search"></i></a>
-        <div id="navbar-search-field" class="collapse width col-md-4">
-          <form id="cse-search-form" action="https://help.openshift.com/hc/en-us/search" method="get">
-            <input id="cse-search-input" class="navbar-search-query form-control" name="query" type="text" placeholder=" Search" tabindex="1" autocomplete="off" autofocus="autofocus" />
-            <button class="btn btn-default fa fa-search" type="submit" value="Search"></button>
-        </form>
-        </div>
+      <li class="hidden-xs hidden-sm">
+        <a class="nav-log-in" href="https://apps.redbridge.se/app/console">Log in</a>
       </li>
       <li class="hidden-xs hidden-sm">
-        <a class="nav-log-in" href="https://openshift.redhat.com/app/console">Log in</a>
-      </li>
-      <li class="hidden-xs hidden-sm">
-        <a class="nav-sign-up" href="https://www.openshift.com/app/account/new">Sign up free</a>
+        <a class="nav-sign-up" href="https://portal.redbridge.se/account/signup/">Sign up</a>
       </li>
     </ul>
   </div></div>
@@ -210,10 +154,10 @@ module DocSiteBuilder
   </p>
   <ol class="breadcrumb">
         <li class="sitename">
-          <a href="/">OpenShift Documentation</a>
+          <a href="/">RedBridge Apps Documentation</a>
         </li>
         <li class="hidden-xs active">
-          #{args[:distro]} #{args[:version]}
+          Powered by OpenShift Origin
         </li>
       </ol>
   <div class="row row-offcanvas row-offcanvas-left">
@@ -532,6 +476,7 @@ EOF
                 :images_path    => "../../#{branch_config["dir"]}/images/",
                 :css         => [
                   'docs.css',
+                  'subdomain.css'
                 ],
               })
               File.write(tgt_file_path,full_file_text)

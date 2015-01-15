@@ -1,4 +1,4 @@
-= Interacting with OpenShift
+= Interacting with RedBridge Apps
 {product-author}
 {product-version}
 :data-uri:
@@ -10,10 +10,10 @@
 toc::[]
 
 == Overview
-There are two interfaces available for interacting with OpenShift Online: the Management Console graphical user interface and the command line interface (CLI), referred to as the client tools.
+There are two interfaces available for interacting with RedBridge Apps: the Management Console graphical user interface and the command line interface (CLI), referred to as the client tools.
 
 == Management Console
-The OpenShift Management Console is a https://openshift.redhat.com/app/login?then=%2Fapp%2Fconsole[web interface] that you can access with a web browser, and is best suited for:
+The RedBridge Apps Console is a https://apps.redbridge.se/console[web interface] that you can access with a web browser, and is best suited for:
 
 * Setting up, administering and managing accounts 
 * Launching new applications 
