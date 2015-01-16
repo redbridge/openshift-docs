@@ -15,7 +15,7 @@ module DocSiteBuilder
     PACKAGE_DIRNAME     = '_package'
     BLANK_STRING_RE     = Regexp.new('^\s*$')
     PRODUCT_AUTHOR      = "RedBridge Apps <operations@redbridge.se> and OpenShift Documentation Project <dev@lists.openshift.redhat.com>"
-    ANALYTICS_SHIM      = '<script type="text/javascript" src="https://assets.openshift.net/app/assets/site/tracking.js"></script>'
+    # ANALYTICS_SHIM      = '<script type="text/javascript" src="https://assets.openshift.net/app/assets/site/tracking.js"></script>'
 
     def source_dir
       @source_dir ||= File.expand_path '../../../', __FILE__
@@ -121,10 +121,8 @@ module DocSiteBuilder
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="#{args[:javascripts_path]}bootstrap-offcanvas.js" type="text/javascript"></script>
-<script src="https://assets.openshift.net/content/modernizr.js" type="text/javascript"></script>
-<link href="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png">
-<link href="https://assets.openshift.net/content/subdomain/favicon32x32.png" rel="shortcut icon" type="text/css">
-<!--[if IE]><link rel="shortcut icon" href="https://assets.openshift.net/content/subdomain/favicon.ico"><![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/web-starter-kit/0.2.0-beta/images/touch/apple-touch-icon-144x144-precomposed.png" type="image/png">
 <!-- or, set /favicon.ico for IE10 win -->
 <meta content="OpenShift" name="application-name">
 <meta content="#000000" name="msapplication-TileColor">
@@ -190,7 +188,19 @@ EOF
     </div>
   </div>
 </div>
-#{ANALYTICS_SHIM}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1378790-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 <script type="text/javascript">
 /*<![CDATA[*/
 $(document).ready(function() {
