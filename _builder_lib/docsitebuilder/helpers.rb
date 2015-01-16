@@ -154,7 +154,7 @@ module DocSiteBuilder
   </p>
   <ol class="breadcrumb">
         <li class="sitename">
-          <a href="/">RedBridge Apps Documentation</a>
+          <a href="/rbapps_v4/welcome/index.html">RedBridge Apps Documentation</a>
         </li>
         <li class="hidden-xs active">
           Powered by OpenShift Origin

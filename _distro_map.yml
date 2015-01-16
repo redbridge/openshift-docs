@@ -8,6 +8,9 @@ openshift-origin:
     origin-4:
       name: Version 4
       dir: stable
+    rb:
+      name: RedBridge Apps Docs (Version 4)
+      dir: rbapps
 openshift-online:
   name: OpenShift Online
   branches:
@@ -20,3 +23,12 @@ openshift-enterprise:
     enterprise-2.2:
       name: Version 2.2
       dir: enterprise/v2.2
+openshift-origin:
+  name: RedBridge Apps
+  branches:
+    master:
+      name: Nightly Build
+      dir: latest
+    rb:
+      name: RedBridge Apps Docs (Stable)
+      dir: rbapps_v4
